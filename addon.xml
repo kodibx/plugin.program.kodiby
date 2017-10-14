@@ -9,7 +9,7 @@
   <extension point="xbmc.addon.metadata">
     <summary lang="en">kodibx</summary>
     <description lang="en">Easy Install With KODI / XBMC Wizard /
-##Credit To kodibx for his support and friendship##</description>
+##Credit To kodiby for his support and friendship##</description>
     <platform>all</platform>
   </extension>
 </addon>
