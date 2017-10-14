@@ -39,10 +39,10 @@ def OPEN_URL(url):
     
     
 def wizard(name,url,description):
-    path = xbmc.translatePath(os.path.join("special://","profile"))
-    pathdest = (xbmc.translatePath("special://home"))
+    path = (xbmc.translatePath("special://userdata/addon_data/plugin.video.vstream/"))
+    pathdest = (xbmc.translatePath("special://userdata/addon_data/plugin.video.vstream/"))              
     dp = xbmcgui.DialogProgress()
-    dp.create("kodibx","je copie le fichier ZIP dans ",path, "un moment s'il vous plait ...")
+    dp.create("kodibx","je copie le fichier ZIP dans ",pathdest, "un moment s'il vous plait ...")
     lib=os.path.join(path, name+'.zip')
 
     time.sleep(5)
