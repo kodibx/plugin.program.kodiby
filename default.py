@@ -53,10 +53,10 @@ def wizard(name,url,description):
     print addonfolder
     print '======================================='
     time.sleep(5)
-    dp.update(0,"", "Extracting Zip Please Wait")
+    dp.update(0,"1", "Extracting Zip Please Wait")
 
 
-    extract.allWithProgress(lib,addonfolder,dp)
+    extract.allWithProgress(lib,pathdest,dp)
     if os.path.exists(lib):
         os.remove(lib)
     dialog = xbmcgui.Dialog()
