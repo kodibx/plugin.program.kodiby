@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml version="1.0.4" encoding="UTF-8" standalone="yes"?>
 <addon id="plugin.program.kodiby" name="kodiby" version="1.0.4" provider-name="kodiby">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
@@ -7,9 +7,9 @@
         <provides>video executable</provides>
   </extension>
   <extension point="xbmc.addon.metadata">
-    <summary lang="en">kodibx</summary>
+    <summary lang="en">kodiby</summary>
     <description lang="en">Easy Install With KODI / XBMC Wizard /
-##Credit To kodiby for his support and friendship##</description>
+##Credit To kodibx for his support and friendship##</description>
     <platform>all</platform>
   </extension>
 </addon>
