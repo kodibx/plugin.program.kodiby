@@ -15,10 +15,10 @@ import ntpath
 
 USER_AGENT = 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-GB; rv:1.9.0.3) Gecko/2008092417 Firefox/3.0.3'
 base='http://www.kodibx.com/kodibx/kodibx/master/wizard'
-ADDON=xbmcaddon.Addon(id='plugin.program.kodiby')
+ADDON=xbmcaddon.Addon(id='plugin.video.kodibx')
 dialog = xbmcgui.Dialog()    
 VERSION = "1.0.4"
-PATH = "kodiby"            
+PATH = "kodibx"            
 
     
 def CATEGORIES():
@@ -39,10 +39,10 @@ def OPEN_URL(url):
     
     
 def wizard(name,url,description):
-    path = (xbmc.translatePath("special://userdata/addon_data/plugin.video.vstream/"))
-    pathdest = (xbmc.translatePath("special://userdata/addon_data/plugin.video.vstream/"))              
+    path = xbmc.translatePath(os.path.join("special://","profile"))
+    pathdest = (xbmc.translatePath("special://home"))
     dp = xbmcgui.DialogProgress()
-    dp.create("kodibx","je copie le fichier ZIP dans ",pathdest, "un moment s'il vous plait ...")
+    dp.create("kodibx","je copie le fichier ZIP dans ",path, "un moment s'il vous plait ...")
     lib=os.path.join(path, name+'.zip')
 
     time.sleep(5)
@@ -53,12 +53,14 @@ def wizard(name,url,description):
     print addonfolder
     print '======================================='
     time.sleep(5)
-    dp.update(0,"", "Extracting Zip Please Wait")
+    dp.update(0,"kodibx", "Extracting Zip Please Wait")
 
 
-    extract.allWithProgress(lib,pathdest,dp)
+    extract.allWithProgress(lib,addonfolder,dp)
+    if os.path.exists(lib):
+        os.remove(lib)
     dialog = xbmcgui.Dialog()
-    dialog.ok("DOWNLOAD COMPLETE", 'Unfortunately the only way to get the new changes to stick is', 'to force close kodi. Click ok to force Kodi to close,', 'DO NOT use the quit/exit options in Kodi., If the Force close does not close for some reason please Restart Device or kill task manaully')
+    dialog.ok("DOWNLOAD COMPLETE", 'Malheureusement, la seule façon d'effectuer les nouveaux changements est', 'to force close kodi. Click ok to force Kodi to close,', 'DO NOT use the quit/exit options in Kodi., If the Force close does not close for some reason please Restart Device or kill task manaully')
     killxbmc()
         
       
