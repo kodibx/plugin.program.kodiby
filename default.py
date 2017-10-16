@@ -60,13 +60,13 @@ def wizard(name,url,description):
     if os.path.exists(lib):
         os.remove(lib)
     dialog = xbmcgui.Dialog()
-    dialog.ok("DOWNLOAD COMPLETE", 'Unfortunately the only way to get the new changes to stick is', 'to force close kodi. Click ok to force Kodi to close,', 'DO NOT use the quit/exit options in Kodi., If the Force close does not close for some reason please Restart Device or kill task manaully')
+    dialog.ok("DOWNLOAD COMPLETE", 'Malheureusement, la seule façon d obtenir les nouveaux changements est de', 'forcer la fermeture de kodi . Cliquez sur OK pour forcer Kodi à fermer,', 'NE PAS utiliser l\'option quit/exit dans Kodi., If the Force close does not close for some reason please Restart Device or kill task manaully')
     killxbmc()
         
       
         
 def killxbmc():
-    choice = xbmcgui.Dialog().yesno('Force Close Kodi', 'You are about to close Kodi', 'Would you like to continue?', nolabel='No, Cancel',yeslabel='Yes, Close')
+    choice = xbmcgui.Dialog().yesno('Forcer Koki à se fermer', 'You are about to close Kodi', 'Voulez-vous continuer?', nolabel='Non, Annuler',yeslabel='Oui, Fermer')
     if choice == 0:
         return
     elif choice == 1:
