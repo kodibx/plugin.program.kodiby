@@ -1,5 +1,5 @@
 <?xml version="1.0.4" encoding="UTF-8" standalone="yes"?>
-<addon id="plugin.program.kodiby" name="kodiby" version="1.0.4" provider-name="kodiby">
+<addon id="plugin.program.kodiby" name="kodiby" version="1.0.5" provider-name="kodiby">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
   </requires>
