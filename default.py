@@ -1,3 +1,4 @@
+#-*- coding: utf-8 -*-
 import xbmc, xbmcaddon, xbmcgui, xbmcplugin,os,sys
 import shutil
 import urllib2,urllib
@@ -36,13 +37,17 @@ def OPEN_URL(url):
     link=response.read()
     response.close()
     return link
-    
+
+
+      
     
 def wizard(name,url,description):
+
+
     path = (xbmc.translatePath("special://userdata/addon_data/plugin.video.vstream/"))
     pathdest = (xbmc.translatePath("special://userdata/addon_data/plugin.video.vstream/"))   
     dp = xbmcgui.DialogProgress()
-    dp.create("kodibx","je copie le fichier ZIP dans ",path, "un moment s'il vous plait ...")
+    dp.create("[COLOR=firebrick][B]ATTENTION !!![/COLOR][/B] Mise a jour de la Bibliotèque de KODI","Copie du fichier ZIP contenant les liens de la Bibliotèque","Vous pouvez encore annuler cette copie en cliquant sur [COLOR=dodgerblue][B]Annuler[/COLOR][/B]  ", "Dans le cas contraire, merci de patienter un moment ...")
     lib=os.path.join(path, name+'.zip')
 
     time.sleep(5)
@@ -53,20 +58,19 @@ def wizard(name,url,description):
     print addonfolder
     print '======================================='
     time.sleep(5)
-    dp.update(0,"1", "Extracting Zip Please Wait")
+    dp.update(0,"Décompression du fichier ZIP sur le disque interne", "le fichier ZIP sera ensuite supprimé pour faire de la place.")
 
 
     extract.allWithProgress(lib,pathdest,dp)
+    xbmc.executebuiltin('UpdateLibrary(video)')  
     if os.path.exists(lib):
         os.remove(lib)
-    dialog = xbmcgui.Dialog()
-    dialog.ok("DOWNLOAD COMPLETE", 'Malheureusement, la seule façon d obtenir les nouveaux changements est de', 'forcer la fermeture de kodi . Cliquez sur OK pour forcer Kodi à fermer,', 'NE PAS utiliser l\'option quit/exit dans Kodi., If the Force close does not close for some reason please Restart Device or kill task manaully')
-    killxbmc()
+
         
       
         
 def killxbmc():
-    choice = xbmcgui.Dialog().yesno('Forcer Koki à se fermer', 'You are about to close Kodi', 'Voulez-vous continuer?', nolabel='Non, Annuler',yeslabel='Oui, Fermer')
+    choice = xbmcgui.Dialog().yesno('Force Close Kodi', 'You are about to close Kodi', 'Would you like to continue?', nolabel='No, Cancel',yeslabel='Yes, Close')
     if choice == 0:
         return
     elif choice == 1:
@@ -220,21 +224,29 @@ print "IconImage: "+str(iconimage)
 
 
 def setView(content, viewType):
+
+
+
+
+        
     # set content type so library shows more views and info
     if content:
         xbmcplugin.setContent(int(sys.argv[1]), content)
     if ADDON.getSetting('auto-view')=='true':
         xbmc.executebuiltin("Container.SetViewMode(%s)" % ADDON.getSetting(viewType) )
         
+
         
 if mode==None or url==None or len(url)<1:
         CATEGORIES()
        
 elif mode==1:
+
         wizard(name,url,description)
         
 
         
 xbmcplugin.endOfDirectory(int(sys.argv[1]))
+
 
 
