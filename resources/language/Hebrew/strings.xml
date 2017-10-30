@@ -1,0 +1,24 @@
+
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<!-- Translated using Transifex web application. For support, or if you would like to to help out, please visit your language team! -->
+<!-- English language-Team URL: http://www.transifex.com/projects/p/xbmc-addons/language/en/ -->
+<!-- Report language file syntax bugs at: alanwww1@xbmc.org -->
+
+<strings>
+    <!-- Dialog strings -->
+    <string id="30000">האם ברצונך להעלות את "%s"?</string>
+    <string id="30001">הועלה עם המזהה: %s</string>
+    <string id="30002">קישור: %s</string>
+    <string id="30003">לא יישלח אי-מייל (לא הוגדר אי-מייל) </string>
+    <string id="30004">האי-מייל יישלח אל: %s</string>
+
+    <!-- Settings -->
+    <string id="31000">כתובת אי-מייל</string>
+    <string id="31001">דלג תמיד על היומן xbmc.old.log (יומן מההפעלה הקודמת)</string>
+
+    <!-- Usage help strings in settings dialog -->
+    <string id="32000">ההרחבה הזו מעלה את היומנים שלך אל xbmclogs.com</string>
+    <string id="32001">אם ברצונך לקבל הודעת אי-מייל המכילה קישורים ישירים</string>
+    <string id="32002">עליך להגדיר את כתובת האי-מייל שלך ליומנים שאתה מעלה</string>
+    <string id="32004">יומני באגים עשויים להכיל שמות משתמש או סיסמאות!</string>
+</strings>
