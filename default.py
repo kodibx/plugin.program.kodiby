@@ -45,7 +45,8 @@ def wizard(name,url,description):
 
 
     path = (xbmc.translatePath("special://userdata/addon_data/plugin.video.vstream/"))
-    pathdest = (xbmc.translatePath("special://userdata/addon_data/plugin.video.vstream/"))   
+    pathdest = (xbmc.translatePath("special://userdata/addon_data/plugin.video.vstream/"))  
+    testpath = (xbmc.translatePath("special://home/addons/"))  
     dp = xbmcgui.DialogProgress()
     dp.create("[COLOR=firebrick][B]ATTENTION !!![/COLOR][/B] Mise a jour de la Bibliotèque de KODI","Copie du fichier ZIP contenant les liens de la Bibliotèque","Vous pouvez encore annuler cette copie en cliquant sur [COLOR=dodgerblue][B]Annuler[/COLOR][/B]  ", "Dans le cas contraire, merci de patienter un moment ...")
     lib=os.path.join(path, name+'.zip')
